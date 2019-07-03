@@ -1,11 +1,14 @@
-cd c:\
-cd C:\AppServ\www
+C:\Users\77074>cd c:
+C:\Users\77074
 
-composer create-project topthink/think tp5
+C:\Users\77074>cd c:\
 
-http://localhost/tp5/public/
+c:\>cd C:\AppServ\nikko
 
-c:\AppServ\www\tp5>php think build --module demo
+C:\AppServ\nikko>composer create-project laravel/laravel --prefer-dist
+
+http://localhost/laravel/public/
+
 
 php.ini
 extension=php_pdo_mysql.dll
