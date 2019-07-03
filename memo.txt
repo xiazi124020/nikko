@@ -1,0 +1,11 @@
+cd c:\
+cd C:\AppServ\www
+
+composer create-project topthink/think tp5
+
+http://localhost/tp5/public/
+
+c:\AppServ\www\tp5>php think build --module demo
+
+php.ini
+extension=php_pdo_mysql.dll
