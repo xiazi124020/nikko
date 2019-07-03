@@ -9,3 +9,4 @@ c:\AppServ\www\tp5>php think build --module demo
 
 php.ini
 extension=php_pdo_mysql.dll
+
