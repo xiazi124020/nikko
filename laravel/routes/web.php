@@ -14,3 +14,23 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('test', function() {
+    return 'get request';
+});
+
+
+Route::post('test1', function() {
+
+});
+
+Route::any('test2', function() {
+    return 'any request';
+});
+
+Route::get('/about', 'MyController@getAbout');
+
+Route::resource('user', 'UserController');
+
+Route::get('/home', 'MyController@home');
