@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
@@ -21,7 +21,7 @@ class LoginController extends CommonController
             session(['employee'=>$employee]);
             return view('pages.home');
         } else {
-            return view('admin.login');
+            return view('login');
         }
 
 

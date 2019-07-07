@@ -48,6 +48,6 @@ Route::get('/', function () {
     
 // });
 
-Route::any('admin/login', 'Admin\LoginController@login');
-Route::any('admin/crypy', 'Admin\LoginController@crypt');
-Route::any('admin/index', 'Admin\IndexController@index');
+Route::any('login', 'LoginController@login');
+Route::any('crypy', 'LoginController@crypt');
+Route::any('index', 'IndexController@index');
