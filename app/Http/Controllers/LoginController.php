@@ -19,10 +19,6 @@ class LoginController extends CommonController
             }
 
             session(['employee'=>$employee]);
-            // dd($employee->toArray());
-            $employee = $employee->toArray();
-            // dd($employee[0]['name']);
-            session(['login_user'=>$employee[0]['name']]);
 
             return view('pages.home');
         } else {

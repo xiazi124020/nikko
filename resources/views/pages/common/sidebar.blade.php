@@ -18,7 +18,7 @@
         <div class="info">
 
           <a href="#" class="d-block">      
-          {{ session('login_user') }}
+          {{Session::get('employee')[0]['name']}}
           </a>
         </div>
       </div>
