@@ -7,7 +7,7 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="resources/views/plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="{{asset('resources/views/plugins/fontawesome-free/css/all.min.css')}}">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Tempusdominus Bbootstrap 4 -->
@@ -258,7 +258,7 @@ All rights reserved.
 <!-- FastClick -->
 <script src="{{asset('resources/views/plugins/fastclick/fastclick.js')}}"></script>
 <!-- AdminLTE App -->
-<script src="{{asset('resources/views/ist/js/adminlte.js')}}"></script>
+<script src="{{asset('resources/views/dist/js/adminlte.js')}}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{asset('resources/views/dist/js/pages/dashboard.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
