@@ -15,6 +15,7 @@ class LoginController extends CommonController
             $employee = Employee::where('email', $input['email'])->where('password', $input['password'])->get();
             // dd($employee);
             if($employee->isEmpty()) {
+                session(['employee'=>null]);
                 return back()->with('msg', 'メールアドレスまたはパスワード不正！');
             }
 
@@ -22,6 +23,7 @@ class LoginController extends CommonController
 
             return view('pages.home');
         } else {
+            session(['employee'=>null]);
             return view('login');
         }
 
