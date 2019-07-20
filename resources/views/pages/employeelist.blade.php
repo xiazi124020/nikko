@@ -39,10 +39,12 @@
                   <div class="row">
                     <div class="col-7">
                       <h2 class="lead"><b>{{$employee->name}}</b></h2>
-                      <p class="text-muted text-sm">{{$employee->birthday}}</p>
+                      <!-- <p class="text-muted text-sm">{{$employee->birthday}}</p> -->
                       <ul class="ml-4 mb-0 fa-ul text-muted">
                         <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span>{{$employee->address}}</li>
-                        <li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span>{{$employee->mobile}}</li>
+                        <li class="small"><span class="fa-li"><i class="fas fa-lg fa-mobile"></i></span>{{$employee->mobile}}</li>
+                        <li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span>{{$employee->tel}}</li>
+                        <li class="small"><span class="fa-li"><i class="fas fa-lg fa-envelope"></i></span>{{$employee->email}}</li>
                       </ul>
                     </div>
                     <div class="col-5 text-center">
