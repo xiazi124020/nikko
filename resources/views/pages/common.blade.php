@@ -183,7 +183,7 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item has-treeview menu-open">
+          <!-- <li class="nav-item menu-open">
             <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
@@ -199,7 +199,54 @@
                 </a>
               </li>
             </ul>
+          </li> -->
+
+
+          <li class="nav-item">
+            <a href="/index" class="nav-link active">
+              <i class="fa fa-fw fa-home"></i>
+              <p>
+                Home
+              </p>
+            </a>
           </li>
+
+          <li class="nav-item">
+            <a href="/employee/list" class="nav-link active">
+              <i class="fa fa-fw fa-user"></i>
+              <p>
+                社員管理
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="/project/list" class="nav-link active">
+              <i class="fa fa-fw fa-tasks"></i>
+              <p>
+                プロジェクト管理
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="/customer/list" class="nav-link active">
+              <i class="fa fa-fw fa-street-view"></i>
+              <p>
+                取引先管理
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="/process/list" class="nav-link active">
+              <i class="fa fa-fw fa-folder-open"></i>
+              <p>
+                各種手続き申請
+              </p>
+            </a>
+          </li>
+
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

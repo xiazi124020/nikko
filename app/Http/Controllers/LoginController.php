@@ -23,7 +23,9 @@ class LoginController extends CommonController
 
             return view('pages.home');
         } else {
-            session(['employee'=>null]);
+            if(session('employee') != null) {
+                return view('pages.home');
+            }
             return view('login');
         }
 
