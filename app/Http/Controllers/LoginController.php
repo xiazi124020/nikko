@@ -12,7 +12,7 @@ class LoginController extends CommonController
 {
     public function login() {
         if($input = Input::all()) {
-            $employee = Employee::where('email', $input['email'])->where('password', $input['password'])->get();
+            $employee = Employee::where('email', $input['email'])->where('password', $input['password'])->orderBy('id', 'asc')->get();
             // dd($employee);
             if($employee->isEmpty()) {
                 session(['employee'=>null]);
