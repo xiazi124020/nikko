@@ -10,7 +10,7 @@ class EmployeeController extends CommonController
 {
     public function list() {
         $loginPromission = session('employee')[0]['permission'];
-        $employees = Employee::where('permission', '>=', $loginPromission)->get();
+        $employees = Employee::where('permission', '<=', $loginPromission)->get();
 
         // $employees = DB::table('employee')
         //     ->join('contacts', 'users.id', '=', 'contacts.user_id')

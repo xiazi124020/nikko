@@ -157,7 +157,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index.html" class="brand-link">
+    <a href="/index" class="brand-link">
       <img src="{{asset('resources/views/dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
       <span class="brand-text font-weight-light">nikko</span>
@@ -200,51 +200,100 @@
               </li>
             </ul>
           </li> -->
-
-
-          <li class="nav-item">
-            <a href="/index" class="nav-link active">
-              <i class="fa fa-fw fa-home"></i>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-user"></i>
               <p>
-                Home
+              社員管理
+                <i class="fas fa-angle-left right"></i>
               </p>
             </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/employee/list" class="nav-link">
+                  <i class="fa fa-users"></i>
+                  <p>社員一覧</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/employee/add" class="nav-link">
+                  <i class="fa fa-user-plus"></i>
+                  <p>社員追加</p>
+                </a>
+              </li>
+            </ul>
           </li>
 
-          <li class="nav-item">
-            <a href="/employee/list" class="nav-link active">
-              <i class="fa fa-fw fa-user"></i>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-cubes"></i>
               <p>
-                社員管理
+              プロジェクト管理
+                <i class="fas fa-angle-left right"></i>
               </p>
             </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/project/list" class="nav-link">
+                  <i class="fa fa-fw fa-tasks"></i>
+                  <p>プロジェクト一覧</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/project/add" class="nav-link">
+                  <i class="fa fa-fw fa-plus-circle"></i>
+                  <p>プロジェクト追加</p>
+                </a>
+              </li>
+            </ul>
           </li>
 
-          <li class="nav-item">
-            <a href="/project/list" class="nav-link active">
-              <i class="fa fa-fw fa-tasks"></i>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-sitemap"></i>
               <p>
-                プロジェクト管理
+              取引先管理
+                <i class="fas fa-angle-left right"></i>
               </p>
             </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/customer/list" class="nav-link">
+                  <i class="fa fa-fw fa-street-view"></i>
+                  <p>取引先一覧</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/customer/add" class="nav-link">
+                  <i class="fa fa-fw fa-plus-circle"></i>
+                  <p>取引先追加</p>
+                </a>
+              </li>
+            </ul>
           </li>
 
-          <li class="nav-item">
-            <a href="/customer/list" class="nav-link active">
-              <i class="fa fa-fw fa-street-view"></i>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-folder-open"></i>
               <p>
-                取引先管理
+              各種手続き申請
+                <i class="fas fa-angle-left right"></i>
               </p>
             </a>
-          </li>
-
-          <li class="nav-item">
-            <a href="/process/list" class="nav-link active">
-              <i class="fa fa-fw fa-folder-open"></i>
-              <p>
-                各種手続き申請
-              </p>
-            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/process/list" class="nav-link">
+                  <i class="fa fa-fw fa-tasks "></i>
+                  <p>マイ申請</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/process/application" class="nav-link">
+                  <i class="fa fa-fw fa-certificate "></i>
+                  <p>証明書発行申請</p>
+                </a>
+              </li>
+            </ul>
           </li>
 
         </ul>
