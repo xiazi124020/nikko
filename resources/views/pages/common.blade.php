@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>nikko | hr</title>
+  <title>日興テクノロジー | 社内システム</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
@@ -160,7 +160,7 @@
     <a href="/index" class="brand-link">
       <img src="{{asset('resources/views/dist/img/nk.jpg')}}" alt="nikko Logo" class="brand-image img-circle elevation-3"
            style="opacity: 1">
-      <span class="brand-text font-weight-light">nikko</span>
+      <span class="brand-text font-weight-light">NIKKO</span>
     </a>
 
     <!-- Sidebar -->

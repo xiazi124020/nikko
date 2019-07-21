@@ -11,7 +11,7 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><a href="/index">Home</a></li>
               <li class="breadcrumb-item active">Contacts</li>
             </ol>
           </div>
@@ -33,7 +33,7 @@
             <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch">
               <div class="card bg-light">
                 <div class="card-header text-muted border-bottom-0">
-                {{$employee->title}}
+                {{$employee->code_Name}}
                 </div>
                 <div class="card-body pt-0">
                   <div class="row">

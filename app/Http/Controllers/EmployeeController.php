@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Model\Employee;
+use App\Http\Model\VEmployee;
 use Illuminate\Support\Facades\DB;
 
 class EmployeeController extends CommonController
 {
     public function list() {
         $loginPromission = session('employee')[0]['permission'];
-        $employees = Employee::where('permission', '<=', $loginPromission)->get();
+        $employees = VEmployee::where('permission', '<=', $loginPromission)->get();
 
         // $employees = DB::table('employee')
         //     ->join('contacts', 'users.id', '=', 'contacts.user_id')
