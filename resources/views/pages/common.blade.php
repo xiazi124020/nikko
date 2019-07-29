@@ -8,14 +8,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="{{asset('resources/views/plugins/bootstrap/css/bootstrap.min.css')}}">
   <!-- DataTables -->
-  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="{{asset('resources/views/plugins/datatables/jquery.dataTables.min.css')}}">
   <link rel="stylesheet" href="{{asset('resources/views/dist/css/extensions/editor/editor.dataTables.min.css') }}">
-  <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.6/css/buttons.dataTables.min.css">
-  <link rel="stylesheet" href="https://cdn.datatables.net/select/1.3.0/css/select.dataTables.min.css">
+  <link rel="stylesheet" href="{{asset('resources/views/dist/css/buttons.dataTables.min.css')}}">
+  <link rel="stylesheet" href="{{asset('resources/views/dist/css/select.dataTables.min.css')}}">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="{{asset('resources/views/plugins/fontawesome-free/css/all.min.css')}}">
   <!-- Ionicons -->
-  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="{{asset('resources/views/dist/css/ionicons.min.css')}}">
   <!-- Tempusdominus Bbootstrap 4 -->
   <link rel="stylesheet" href="{{asset('resources/views/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css')}}">
   <!-- iCheck -->
@@ -31,7 +31,7 @@
   <!-- summernote -->
   <link rel="stylesheet" href="{{asset('resources/views/plugins/summernote/summernote-bs4.css')}}">
   <!-- Google Font: Source Sans Pro -->
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <link href="{{asset('resources/views/dist/css/fonts.css')}}" rel="stylesheet">
 
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">

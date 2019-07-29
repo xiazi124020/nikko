@@ -39,35 +39,35 @@
   
 @section('javascript')
 
-
 <script>
 var editor; // use a global for the submit and return data rendering in the ipadipodLists
 var employeeTable;
-$(document).ready(function() {
+// $(document).ready(function() {
+$(window).on(function () {
+  alert("123");
   // editor = new $.fn.dataTable.Editor({
   //   ajax: {
   //     create: {
   //       type: 'POST',
-  //       url: '/rpa/api/system/iphone_create',
+  //       url: '/employee/add',
   //       data:function(data){
   //         var result={};  
   //         for(var i in data.data){  
   //           var result=data.data[i];  
   //           result.DT_RowId=i; 
   //           result.action=data.action;
-  //           result.headers={"X-CSRFToken": csrfToken};
   //           var retjson = JSON.stringify( result );
   //           console.log(retjson);  
   //         }  
   //         return result;  
   //       },
   //       success: function (json) {
-  //         createIphoneList();
+  //         createEmployeeTable();
   //       }
   //     },
   //     edit: {
   //       type: 'POST',
-  //       url: '/rpa/api/system/iphone_update',
+  //       url: '/employee/update',
   //       data:function(data){
   //         var result={};  
   //         for(var i in data.data){  
@@ -80,12 +80,12 @@ $(document).ready(function() {
   //         return result;  
   //       },
   //       success: function (json) {
-  //         createIphoneList();
+  //         createEmployeeTable();
   //       }
   //     },
   //     remove: {
   //       type: 'POST',
-  //       url: '/rpa/api/system/iphone_delete',
+  //       url: '/employee/delete',
   //       data:function(data){
   //         var result={};  
   //         for(var i in data.data){  
@@ -98,22 +98,22 @@ $(document).ready(function() {
   //         return result;  
   //       },
   //       success: function (json) {
-  //         createIphoneList();
+  //         createEmployeeTable();
   //       },
   //       deleteBody: true
   //     }
   //   },
-  //   idSrc: "internal_name",
-  //   table: "#ipadipodList",
+  //   idSrc: "id",
+  //   table: "#employees",
   //   fields: [{
-  //       label: "内部名:",
-  //       name: "internal_name"
+  //       label: "社員番号:",
+  //       name: "id"
   //     }, {
-  //       label: "一般名:",
-  //       name: "model_name"
+  //       label: "名前:",
+  //       name: "name"
   //     }, {
-  //       label: "表示名:",
-  //       name: "disp_name"
+  //       label: "カナ:",
+  //       name: "kana"
   //     }
   //   ]
   // });
@@ -132,9 +132,10 @@ function createEmployeeTable() {
       employeeTable.destroy();
       employeeTable.clear();
     }
+    console.log(datas);
 
     $('#employees').DataTable( {
-
+      paging: true,
       data: datas,
       pageLength: 20,
       columns: [
@@ -175,20 +176,16 @@ function createEmployeeTable() {
           "data": "project_Id"
         }
       ],
-      select: true,
-      columnDefs: [
+      select: true
+      // ,
+      // columnDefs: [
 
-       ],
-      buttons: [
-        'copy', 'csv', 'excel', 'pdf', 'print'
-        {
-          extend: 'print',
-          exportOptions: {
-              columns: ':visible'
-          }
-        },
-        'colvis'
-      ]
+      // ],
+      // buttons: [
+      //   { extend: "create", editor: editor },
+      //   { extend: "edit",   editor: editor },
+      //   { extend: "remove", editor: editor }
+      // ]
     } );
   })
   .catch(err => {

@@ -39,4 +39,16 @@ class EmployeeController extends CommonController
 
         return response()->json($employees);
     }
+    
+    public function add() {
+        return view('pages.employeelist');
+    }
+    
+    public function delete() {
+        return view('pages.employeelist');
+    }
+    
+    public function update() {
+        return view('pages.employeelist');
+    }
 }
