@@ -23,12 +23,12 @@ class LoginController extends CommonController
 
             return view('pages.home');
         } else {
+            // print(session('employee'));
             if(session('employee') != null) {
                 return view('pages.home');
             }
             return view('login');
         }
-
 
     }
     public function crypt() {

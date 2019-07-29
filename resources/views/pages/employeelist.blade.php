@@ -40,11 +40,10 @@
 @section('javascript')
 
 <script>
-var editor; // use a global for the submit and return data rendering in the ipadipodLists
+var editor;
 var employeeTable;
 // $(document).ready(function() {
-$(window).on(function () {
-  alert("123");
+  $(window).on('load', function(){
   // editor = new $.fn.dataTable.Editor({
   //   ajax: {
   //     create: {
@@ -126,18 +125,18 @@ function createEmployeeTable() {
     headers: {},
     data: {}
   }).then(response => {
-    // var datas = JSON.stringify(response.data);
     var datas = response.data;
+
     if(employeeTable) {
       employeeTable.destroy();
       employeeTable.clear();
     }
-    console.log(datas);
 
     $('#employees').DataTable( {
+      dom: "Bfrtip",
       paging: true,
       data: datas,
-      pageLength: 20,
+      pageLength: 10,
       columns: [
         {
           "title":"社員番号",
@@ -176,16 +175,16 @@ function createEmployeeTable() {
           "data": "project_Id"
         }
       ],
-      select: true
-      // ,
+      // select: true,
       // columnDefs: [
 
       // ],
-      // buttons: [
-      //   { extend: "create", editor: editor },
-      //   { extend: "edit",   editor: editor },
-      //   { extend: "remove", editor: editor }
-      // ]
+      buttons: [
+        // "print"
+        // { extend: "create", editor: editor },
+        // { extend: "edit",   editor: editor },
+        // { extend: "remove", editor: editor }
+      ]
     } );
   })
   .catch(err => {
