@@ -32,11 +32,11 @@ class EmployeeController extends CommonController
         $loginPromission = session('employee')[0]['permission'];
         $employees = VEmployee::where('permission', '<=', $loginPromission)->get();
         // print($employees);
-        // $employees = DB::table('employee')
-        //     ->join('code', function ($join) {
-        //         $join->on('employee.title', '=', 'code.code_index')
-        //             ->where('code.code_id', '=', 2);
-        //     })->where('permission', '<=', $loginPromission)->get();
+        $employees = DB::table('employee')
+            ->join('code', function ($join) {
+                $join->on('employee.title', '=', 'code.code_index')
+                    ->where('code.code_id', '=', 2);
+            })->where('permission', '<=', $loginPromission)->get();
         //     // ->join('code', function ($join) {
         //     //     $join->on('code.title', '=', 'code.code_index')
         //     //         ->where('code.code_id', '=', 2);
