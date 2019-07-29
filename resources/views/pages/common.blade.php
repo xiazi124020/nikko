@@ -6,6 +6,12 @@
   <title>日興テクノロジー | 社内システム</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{asset('resources/views/plugins/bootstrap/css/bootstrap.min.css')}}">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="{{asset('resources/views/dist/css/extensions/editor/editor.dataTables.min.css') }}">
+  <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.6/css/buttons.dataTables.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/select/1.3.0/css/select.dataTables.min.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="{{asset('resources/views/plugins/fontawesome-free/css/all.min.css')}}">
   <!-- Ionicons -->
@@ -26,6 +32,7 @@
   <link rel="stylesheet" href="{{asset('resources/views/plugins/summernote/summernote-bs4.css')}}">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -210,7 +217,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/employee/list" class="nav-link">
+                <a href="/employee/listpage" class="nav-link">
                   <i class="fa fa-users"></i>
                   <p>社員一覧</p>
                 </a>
@@ -332,7 +339,15 @@ All rights reserved.
   $.widget.bridge('uibutton', $.ui.button)
 </script>
 <!-- Bootstrap 4 -->
+<script src="{{asset('resources/views/plugins/bootstrap/js/bootstrap.min.js')}}"></script>
 <script src="{{asset('resources/views/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{asset('resources/views/plugins/datatables/jquery.dataTables.min.js')}}"></script>
+<script src="{{asset('resources/views/plugins/datatables/dataTables.bootstrap4.min.js')}}"></script>
+<script src="{{asset('resources/views/plugins/datatables/dataTables.buttons.min.js')}}"></script>
+<script src="{{asset('resources/views/plugins/datatables/buttons.flash.min.js')}}"></script>
+<script src="{{asset('resources/views/plugins/datatables/dataTables.select.min.js')}}"></script>
+<script src="{{asset('resources/views/plugins/datatables/buttons.print.min.js')}}"></script>
+<script src="{{asset('resources/views/plugins/datatables/buttons.colVis.min.js')}}"></script>
 <!-- ChartJS -->
 <script src="{{asset('resources/views/plugins/chart.js/Chart.min.js')}}"></script>
 <!-- Sparkline -->
@@ -356,8 +371,14 @@ All rights reserved.
 <!-- AdminLTE App -->
 <script src="{{asset('resources/views/dist/js/adminlte.js')}}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="{{asset('resources/views/dist/js/pages/dashboard.js')}}"></script>
+<!-- <script src="{{asset('resources/views/dist/js/pages/dashboard.js')}}"></script> -->
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('resources/views/dist/js/demo.js')}}"></script>
+<!-- <script src="{{asset('resources/views/plugins/datatables/dataTables.editor.min.js')}}"></script> -->
+<script src="{{asset('resources/views/dist/js/common/axios.min.js')}}"></script>
+<script src="{{asset('resources/views/dist/js/common/commonfunction.js')}}"></script>
+<script src="{{asset('resources/views/dist/js/common/nikko_datatable.js')}}"></script>
+
+@yield('javascript')
 </body>
 </html>

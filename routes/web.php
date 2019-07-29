@@ -21,7 +21,9 @@ Route::any('crypy', 'LoginController@crypt');
 
 Route::group(['middleware' => ['web', 'check.login']], function() {
     Route::any('index', 'IndexController@index');
-    Route::any('/employee/list', 'EmployeeController@list');
+    Route::any('/employee/listpage', 'EmployeeController@listpage');
+    Route::any('/employee/listdata', 'EmployeeController@listdata');
+    Route::any('/employee/listcard', 'EmployeeController@listcard');
     Route::any('/project/list', 'ProjectController@list');
     Route::any('/customer/list', 'CustomerController@list');
     Route::any('/process/list', 'ProcessController@list');

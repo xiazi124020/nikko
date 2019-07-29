@@ -21,77 +21,181 @@
 
     <!-- Main content -->
     <section class="content">
-
-      <!-- Default box -->
-      <div class="card card-solid">
-        <div class="card-body pb-0">
-          <div class="row d-flex align-items-stretch">
-
-
-
-          @foreach ($employees as $employee)
-            <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch">
-              <div class="card bg-light">
-                <div class="card-header text-muted border-bottom-0">
-                {{$employee->code_Name}}
-                </div>
-                <div class="card-body pt-0">
-                  <div class="row">
-                    <div class="col-7">
-                      <h2 class="lead"><b>{{$employee->name}}</b></h2>
-                      <!-- <p class="text-muted text-sm">{{$employee->birthday}}</p> -->
-                      <ul class="ml-4 mb-0 fa-ul text-muted">
-                        <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span>{{$employee->address}}</li>
-                        <li class="small"><span class="fa-li"><i class="fas fa-lg fa-mobile"></i></span>{{$employee->mobile}}</li>
-                        <li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span>{{$employee->tel}}</li>
-                        <li class="small"><span class="fa-li"><i class="fas fa-lg fa-envelope"></i></span>{{$employee->email}}</li>
-                      </ul>
-                    </div>
-                    <div class="col-5 text-center">
-                      <img src="{{asset('resources/views/dist/img/user1-128x128.jpg')}}" alt="" class="img-circle img-fluid">
-                    </div>
-                  </div>
-                </div>
-                <div class="card-footer">
-                  <div class="text-right">
-                    <a href="#" class="btn btn-sm bg-teal">
-                      <i class="fas fa-comments"></i>
-                    </a>
-                    <a href="#" class="btn btn-sm btn-primary">
-                      <i class="fas fa-user"></i> View Profile
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            @endforeach
-
-
-
-          </div>
-        </div>
-        <!-- /.card-body -->
-        <div class="card-footer">
-          <nav aria-label="Contacts Page Navigation">
-            <ul class="pagination justify-content-center m-0">
-              <li class="page-item active"><a class="page-link" href="#">1</a></li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item"><a class="page-link" href="#">4</a></li>
-              <li class="page-item"><a class="page-link" href="#">5</a></li>
-              <li class="page-item"><a class="page-link" href="#">6</a></li>
-              <li class="page-item"><a class="page-link" href="#">7</a></li>
-              <li class="page-item"><a class="page-link" href="#">8</a></li>
-            </ul>
-          </nav>
-        </div>
-        <!-- /.card-footer -->
-      </div>
-      <!-- /.card -->
-
+      <table id="employees"  style="width:100%">
+        <!-- <thead>
+          <tr>
+            <th>内部名</th>
+            <th>一般名</th>
+            <th>表示名</th>
+          </tr>
+        </thead> -->
+      </table>
     </section>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
 
   @endsection
+  
+@section('javascript')
+
+
+<script>
+var editor; // use a global for the submit and return data rendering in the ipadipodLists
+var employeeTable;
+$(document).ready(function() {
+  // editor = new $.fn.dataTable.Editor({
+  //   ajax: {
+  //     create: {
+  //       type: 'POST',
+  //       url: '/rpa/api/system/iphone_create',
+  //       data:function(data){
+  //         var result={};  
+  //         for(var i in data.data){  
+  //           var result=data.data[i];  
+  //           result.DT_RowId=i; 
+  //           result.action=data.action;
+  //           result.headers={"X-CSRFToken": csrfToken};
+  //           var retjson = JSON.stringify( result );
+  //           console.log(retjson);  
+  //         }  
+  //         return result;  
+  //       },
+  //       success: function (json) {
+  //         createIphoneList();
+  //       }
+  //     },
+  //     edit: {
+  //       type: 'POST',
+  //       url: '/rpa/api/system/iphone_update',
+  //       data:function(data){
+  //         var result={};  
+  //         for(var i in data.data){  
+  //           var result=data.data[i];  
+  //           result.DT_RowId=i; 
+  //           result.action=data.action;
+  //           var retjson = JSON.stringify( result );
+  //           console.log(retjson);  
+  //         }  
+  //         return result;  
+  //       },
+  //       success: function (json) {
+  //         createIphoneList();
+  //       }
+  //     },
+  //     remove: {
+  //       type: 'POST',
+  //       url: '/rpa/api/system/iphone_delete',
+  //       data:function(data){
+  //         var result={};  
+  //         for(var i in data.data){  
+  //           var result=data.data[i];  
+  //           result.DT_RowId=i; 
+  //           result.action=data.action;
+  //           var retjson = JSON.stringify( result );
+  //           console.log(retjson);  
+  //         }  
+  //         return result;  
+  //       },
+  //       success: function (json) {
+  //         createIphoneList();
+  //       },
+  //       deleteBody: true
+  //     }
+  //   },
+  //   idSrc: "internal_name",
+  //   table: "#ipadipodList",
+  //   fields: [{
+  //       label: "内部名:",
+  //       name: "internal_name"
+  //     }, {
+  //       label: "一般名:",
+  //       name: "model_name"
+  //     }, {
+  //       label: "表示名:",
+  //       name: "disp_name"
+  //     }
+  //   ]
+  // });
+  employeeTable = createEmployeeTable();
+} );
+
+function createEmployeeTable() {
+  var url="/employee/listdata";
+  axios.post(url, {
+    headers: {},
+    data: {}
+  }).then(response => {
+    // var datas = JSON.stringify(response.data);
+    var datas = response.data;
+    if(employeeTable) {
+      employeeTable.destroy();
+      employeeTable.clear();
+    }
+
+    $('#employees').DataTable( {
+
+      data: datas,
+      pageLength: 20,
+      columns: [
+        {
+          "title":"社員番号",
+          "data": "id"
+        },
+        {
+          "title":"名前",
+          "data": "name"
+        },
+        {
+          "title":"カナ",
+          "data": "kana"
+        },
+        {
+          "title":"生年月日",
+          "data": "birthday"
+        },
+        {
+          "title":"性別",
+          "data": "sex"
+        },
+        {
+          "title":"携帯",
+          "data": "mobile"
+        },
+        {
+          "title":"職位",
+          "data": "code_Name"
+        },
+        {
+          "title":"email",
+          "data": "email"
+        },
+        {
+          "title":"プロジェクト",
+          "data": "project_Id"
+        }
+      ],
+      select: true,
+      columnDefs: [
+
+       ],
+      buttons: [
+        'copy', 'csv', 'excel', 'pdf', 'print'
+        {
+          extend: 'print',
+          exportOptions: {
+              columns: ':visible'
+          }
+        },
+        'colvis'
+      ]
+    } );
+  })
+  .catch(err => {
+    alert(err);
+    return;
+  });
+}
+ 
+</script>
+@endsection

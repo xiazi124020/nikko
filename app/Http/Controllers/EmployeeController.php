@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 
 class EmployeeController extends CommonController
 {
-    public function list() {
+    public function listcard() {
         $loginPromission = session('employee')[0]['permission'];
         $employees = VEmployee::where('permission', '<=', $loginPromission)->get();
 
@@ -20,6 +20,23 @@ class EmployeeController extends CommonController
         //     ->get();
 
 
-        return view('pages.employeelist', ['employees' => $employees]);
+        return view('pages.employeelistcard', ['employees' => $employees]);
+    }
+
+    public function listpage() {
+        return view('pages.employeelist');
+    }
+    
+    public function listdata() {
+        $loginPromission = session('employee')[0]['permission'];
+        $employees = VEmployee::where('permission', '<=', $loginPromission)->get();
+
+        // $employees = DB::table('employee')
+        //     ->join('contacts', 'users.id', '=', 'contacts.user_id')
+        //     ->join('orders', 'users.id', '=', 'orders.user_id')
+        //     ->select('users.*', 'contacts.phone', 'orders.price')
+        //     ->get();
+
+        return response()->json($employees);
     }
 }
