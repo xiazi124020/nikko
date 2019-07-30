@@ -14,13 +14,6 @@ class EmployeeController extends CommonController
         $loginPromission = session('employee')[0]['permission'];
         $employees = VEmployee::where('permission', '<=', $loginPromission)->get();
 
-        // $employees = DB::table('employee')
-        //     ->join('contacts', 'users.id', '=', 'contacts.user_id')
-        //     ->join('orders', 'users.id', '=', 'orders.user_id')
-        //     ->select('users.*', 'contacts.phone', 'orders.price')
-        //     ->get();
-
-
         return view('pages.employeelistcard', ['employees' => $employees]);
     }
 
@@ -30,6 +23,7 @@ class EmployeeController extends CommonController
     
     public function listdata() {
         $loginPromission = session('employee')[0]['permission'];
+        // $employees = VEmployee::where('permission', '<=', $loginPromission)->get();
         $employees = DB::table('employee')
             ->leftjoin('code AS a', function ($join) {
                 $join->on('employee.title', '=', 'a.code_index')

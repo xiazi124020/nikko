@@ -42,66 +42,65 @@
 <script type="text/javascript">
 var editor;
 var employeeTable;
-// $(document).ready(function() {
-  $(window).on('load', function(){
+$(window).on('load', function(){
   // editor = new $.fn.dataTable.Editor({
-  //   ajax: {
-  //     create: {
-  //       type: 'POST',
-  //       url: '/employee/add',
-  //       data:function(data){
-  //         var result={};  
-  //         for(var i in data.data){  
-  //           var result=data.data[i];  
-  //           result.DT_RowId=i; 
-  //           result.action=data.action;
-  //           var retjson = JSON.stringify( result );
-  //           console.log(retjson);  
-  //         }  
-  //         return result;  
-  //       },
-  //       success: function (json) {
-  //         createEmployeeTable();
-  //       }
-  //     },
-  //     edit: {
-  //       type: 'POST',
-  //       url: '/employee/update',
-  //       data:function(data){
-  //         var result={};  
-  //         for(var i in data.data){  
-  //           var result=data.data[i];  
-  //           result.DT_RowId=i; 
-  //           result.action=data.action;
-  //           var retjson = JSON.stringify( result );
-  //           console.log(retjson);  
-  //         }  
-  //         return result;  
-  //       },
-  //       success: function (json) {
-  //         createEmployeeTable();
-  //       }
-  //     },
-  //     remove: {
-  //       type: 'POST',
-  //       url: '/employee/delete',
-  //       data:function(data){
-  //         var result={};  
-  //         for(var i in data.data){  
-  //           var result=data.data[i];  
-  //           result.DT_RowId=i; 
-  //           result.action=data.action;
-  //           var retjson = JSON.stringify( result );
-  //           console.log(retjson);  
-  //         }  
-  //         return result;  
-  //       },
-  //       success: function (json) {
-  //         createEmployeeTable();
-  //       },
-  //       deleteBody: true
-  //     }
-  //   },
+    // ajax: {
+    //   create: {
+    //     type: 'POST',
+    //     url: '/employee/add',
+    //     data:function(data){
+    //       var result={};  
+    //       for(var i in data.data){  
+    //         var result=data.data[i];  
+    //         result.DT_RowId=i; 
+    //         result.action=data.action;
+    //         var retjson = JSON.stringify( result );
+    //         console.log(retjson);  
+    //       }  
+    //       return result;  
+    //     },
+    //     success: function (json) {
+    //       createEmployeeTable();
+    //     }
+    //   },
+    //   edit: {
+    //     type: 'POST',
+    //     url: '/employee/update',
+    //     data:function(data){
+    //       var result={};  
+    //       for(var i in data.data){  
+    //         var result=data.data[i];  
+    //         result.DT_RowId=i; 
+    //         result.action=data.action;
+    //         var retjson = JSON.stringify( result );
+    //         console.log(retjson);  
+    //       }  
+    //       return result;  
+    //     },
+    //     success: function (json) {
+    //       createEmployeeTable();
+    //     }
+    //   },
+    //   remove: {
+    //     type: 'POST',
+    //     url: '/employee/delete',
+    //     data:function(data){
+    //       var result={};  
+    //       for(var i in data.data){  
+    //         var result=data.data[i];  
+    //         result.DT_RowId=i; 
+    //         result.action=data.action;
+    //         var retjson = JSON.stringify( result );
+    //         console.log(retjson);  
+    //       }  
+    //       return result;  
+    //     },
+    //     success: function (json) {
+    //       createEmployeeTable();
+    //     },
+    //     deleteBody: true
+    //   }
+    // },
   //   idSrc: "id",
   //   table: "#employees",
   //   fields: [{
@@ -126,7 +125,6 @@ function createEmployeeTable() {
     data: {}
   }).then(response => {
     var datas = response.data;
-    // var ret = eval(datas);
 
     if(employeeTable) {
       employeeTable.destroy();
@@ -176,16 +174,19 @@ function createEmployeeTable() {
           "data": "project_Id"
         }
       ],
-      // select: true,
+      select: true,
       // columnDefs: [
 
       // ],
       buttons: [
-        // "print"
-        // { extend: "create", editor: editor },
-        // { extend: "edit",   editor: editor },
-        // { extend: "remove", editor: editor }
+        'copy', 'csv', 'excel', 'pdf', 'print'
       ]
+      // buttons: [
+      //   "print","csv"
+      //   // { extend: "create", editor: editor },
+      //   // { extend: "edit",   editor: editor },
+      //   // { extend: "remove", editor: editor }
+      // ]
     } );
   })
   .catch(err => {
