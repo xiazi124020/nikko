@@ -30,20 +30,19 @@ class EmployeeController extends CommonController
     
     public function listdata() {
         $loginPromission = session('employee')[0]['permission'];
-        $employees = VEmployee::where('permission', '<=', $loginPromission)->get();
-        // print($employees);
         $employees = DB::table('employee')
-            ->join('code', function ($join) {
-                $join->on('employee.title', '=', 'code.code_index')
-                    ->where('code.code_id', '=', 2);
+            ->leftjoin('code AS a', function ($join) {
+                $join->on('employee.title', '=', 'a.code_index')
+                    ->where('a.code_id', '=', 2);
+            })
+            ->leftjoin('code AS b', function ($join) {
+                $join->on('employee.sex', '=', 'b.code_index')
+                    ->where('b.code_id', '=', 1);
             })->where('permission', '<=', $loginPromission)->get();
-        //     // ->join('code', function ($join) {
-        //     //     $join->on('code.title', '=', 'code.code_index')
-        //     //         ->where('code.code_id', '=', 2);
-        //     // })
-        // print($employees);
 
+        $employees = (object)$employees;
         return response()->json($employees);
+
     }
     
     public function add() {

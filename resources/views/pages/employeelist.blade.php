@@ -39,7 +39,7 @@
   
 @section('javascript')
 
-<script>
+<script type="text/javascript">
 var editor;
 var employeeTable;
 // $(document).ready(function() {
@@ -126,6 +126,7 @@ function createEmployeeTable() {
     data: {}
   }).then(response => {
     var datas = response.data;
+    // var ret = eval(datas);
 
     if(employeeTable) {
       employeeTable.destroy();
