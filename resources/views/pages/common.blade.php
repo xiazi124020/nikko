@@ -219,13 +219,13 @@
               <li class="nav-item">
                 <a href="/employee/listpage" class="nav-link">
                   <i class="fa fa-users"></i>
-                  <p>社員一覧</p>
+                  <p>社員管理</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/employee/add" class="nav-link">
-                  <i class="fa fa-user-plus"></i>
-                  <p>社員追加</p>
+                <a href="/dept/add" class="nav-link">
+                  <i class="fa fa-object-group"></i>
+                  <p>部門管理</p>
                 </a>
               </li>
             </ul>
