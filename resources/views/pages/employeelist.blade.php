@@ -43,78 +43,78 @@
 var editor;
 var employeeTable;
 $(window).on('load', function(){
-  // editor = new $.fn.dataTable.Editor({
-    // ajax: {
-    //   create: {
-    //     type: 'POST',
-    //     url: '/employee/add',
-    //     data:function(data){
-    //       var result={};  
-    //       for(var i in data.data){  
-    //         var result=data.data[i];  
-    //         result.DT_RowId=i; 
-    //         result.action=data.action;
-    //         var retjson = JSON.stringify( result );
-    //         console.log(retjson);  
-    //       }  
-    //       return result;  
-    //     },
-    //     success: function (json) {
-    //       createEmployeeTable();
-    //     }
-    //   },
-    //   edit: {
-    //     type: 'POST',
-    //     url: '/employee/update',
-    //     data:function(data){
-    //       var result={};  
-    //       for(var i in data.data){  
-    //         var result=data.data[i];  
-    //         result.DT_RowId=i; 
-    //         result.action=data.action;
-    //         var retjson = JSON.stringify( result );
-    //         console.log(retjson);  
-    //       }  
-    //       return result;  
-    //     },
-    //     success: function (json) {
-    //       createEmployeeTable();
-    //     }
-    //   },
-    //   remove: {
-    //     type: 'POST',
-    //     url: '/employee/delete',
-    //     data:function(data){
-    //       var result={};  
-    //       for(var i in data.data){  
-    //         var result=data.data[i];  
-    //         result.DT_RowId=i; 
-    //         result.action=data.action;
-    //         var retjson = JSON.stringify( result );
-    //         console.log(retjson);  
-    //       }  
-    //       return result;  
-    //     },
-    //     success: function (json) {
-    //       createEmployeeTable();
-    //     },
-    //     deleteBody: true
-    //   }
-    // },
-  //   idSrc: "id",
-  //   table: "#employees",
-  //   fields: [{
-  //       label: "社員番号:",
-  //       name: "id"
-  //     }, {
-  //       label: "名前:",
-  //       name: "name"
-  //     }, {
-  //       label: "カナ:",
-  //       name: "kana"
-  //     }
-  //   ]
-  // });
+  editor = new $.fn.dataTable.Editor({
+    ajax: {
+      create: {
+        type: 'POST',
+        url: '/employee/add',
+        data:function(data){
+          var result={};  
+          for(var i in data.data){  
+            var result=data.data[i];  
+            result.DT_RowId=i; 
+            result.action=data.action;
+            var retjson = JSON.stringify( result );
+            console.log(retjson);  
+          }  
+          return result;  
+        },
+        success: function (json) {
+          createEmployeeTable();
+        }
+      },
+      edit: {
+        type: 'POST',
+        url: '/employee/update',
+        data:function(data){
+          var result={};  
+          for(var i in data.data){  
+            var result=data.data[i];  
+            result.DT_RowId=i; 
+            result.action=data.action;
+            var retjson = JSON.stringify( result );
+            console.log(retjson);  
+          }  
+          return result;  
+        },
+        success: function (json) {
+          createEmployeeTable();
+        }
+      },
+      remove: {
+        type: 'POST',
+        url: '/employee/delete',
+        data:function(data){
+          var result={};  
+          for(var i in data.data){  
+            var result=data.data[i];  
+            result.DT_RowId=i; 
+            result.action=data.action;
+            var retjson = JSON.stringify( result );
+            console.log(retjson);  
+          }  
+          return result;  
+        },
+        success: function (json) {
+          createEmployeeTable();
+        },
+        deleteBody: true
+      }
+    },
+    idSrc: "id",
+    table: "#employees",
+    fields: [{
+        label: "社員番号:",
+        name: "id"
+      }, {
+        label: "名前:",
+        name: "name"
+      }, {
+        label: "カナ:",
+        name: "kana"
+      }
+    ]
+  });
   employeeTable = createEmployeeTable();
 } );
 
@@ -179,14 +179,11 @@ function createEmployeeTable() {
 
       // ],
       buttons: [
-        'copy', 'csv', 'excel', 'pdf', 'print'
+        'copy', 'csv', 'excel', 'pdf', 'print',
+        { extend: "create", editor: editor },
+        { extend: "edit",   editor: editor },
+        { extend: "remove", editor: editor }
       ]
-      // buttons: [
-      //   "print","csv"
-      //   // { extend: "create", editor: editor },
-      //   // { extend: "edit",   editor: editor },
-      //   // { extend: "remove", editor: editor }
-      // ]
     } );
   })
   .catch(err => {

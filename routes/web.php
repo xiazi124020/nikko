@@ -30,4 +30,5 @@ Route::group(['middleware' => ['web', 'check.login']], function() {
     Route::any('/project/list', 'ProjectController@list');
     Route::any('/customer/list', 'CustomerController@list');
     Route::any('/process/list', 'ProcessController@list');
+    Route::any('/dept/list', 'DeptController@list');
 });

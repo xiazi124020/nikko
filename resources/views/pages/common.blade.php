@@ -331,7 +331,7 @@ All rights reserved.
 <!-- ./wrapper -->
 
 <!-- jQuery -->
-<script src="{{asset('resources/views/plugins/jquery/jquery.min.js')}}"></script>
+<script src="{{asset('resources/views/plugins/jquery/jquery-3.4.0.min.js')}}"></script>
 <!-- jQuery UI 1.11.4 -->
 <script src="{{asset('resources/views/plugins/jquery-ui/jquery-ui.min.js')}}"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
@@ -343,6 +343,7 @@ All rights reserved.
 <script src="{{asset('resources/views/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <script src="{{asset('resources/views/plugins/datatables/jquery.dataTables.min.js')}}"></script>
 <script src="{{asset('resources/views/plugins/datatables/dataTables.bootstrap4.min.js')}}"></script>
+<script src="{{asset('resources/views/plugins/bootstrap/js/dataTables.bootstrap.min.js')}}"></script>
 <script src="{{asset('resources/views/plugins/datatables/dataTables.editor.min.js')}}"></script>
 <script src="{{asset('resources/views/plugins/datatables/dataTables.buttons.min.js')}}"></script>
 <script src="{{asset('resources/views/plugins/datatables/dataTables.select.min.js')}}"></script>
