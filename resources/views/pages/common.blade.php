@@ -6,7 +6,7 @@
   <title>日興テクノロジー | 社内システム</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="{{asset('resources/views/plugins/bootstrap/css/bootstrap.min.css')}}">
+  <!-- <link rel="stylesheet" href="{{asset('resources/views/plugins/bootstrap/css/bootstrap.min.css')}}"> -->
   <!-- DataTables -->
   <link rel="stylesheet" href="{{asset('resources/views/plugins/datatables/jquery.dataTables.min.css')}}">
   <link rel="stylesheet" href="{{asset('resources/views/dist/css/extensions/editor/editor.dataTables.min.css') }}">
@@ -17,7 +17,7 @@
   <!-- Ionicons -->
   <link rel="stylesheet" href="{{asset('resources/views/dist/css/ionicons.min.css')}}">
   <!-- Tempusdominus Bbootstrap 4 -->
-  <link rel="stylesheet" href="{{asset('resources/views/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css')}}">
+  <!-- <link rel="stylesheet" href="{{asset('resources/views/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css')}}"> -->
   <!-- iCheck -->
   <link rel="stylesheet" href="{{asset('resources/views/plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}">
   <!-- JQVMap -->
@@ -339,11 +339,11 @@ All rights reserved.
   $.widget.bridge('uibutton', $.ui.button)
 </script>
 <!-- Bootstrap 4 -->
-<script src="{{asset('resources/views/plugins/bootstrap/js/bootstrap.min.js')}}"></script>
-<script src="{{asset('resources/views/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<!-- <script src="{{asset('resources/views/plugins/bootstrap/js/bootstrap.min.js')}}"></script> -->
+<!-- <script src="{{asset('resources/views/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script> -->
 <script src="{{asset('resources/views/plugins/datatables/jquery.dataTables.min.js')}}"></script>
-<script src="{{asset('resources/views/plugins/datatables/dataTables.bootstrap4.min.js')}}"></script>
-<script src="{{asset('resources/views/plugins/bootstrap/js/dataTables.bootstrap.min.js')}}"></script>
+<!-- <script src="{{asset('resources/views/plugins/datatables/dataTables.bootstrap4.min.js')}}"></script> -->
+<!-- <script src="{{asset('resources/views/plugins/bootstrap/js/dataTables.bootstrap.min.js')}}"></script> -->
 <script src="{{asset('resources/views/plugins/datatables/dataTables.editor.min.js')}}"></script>
 <script src="{{asset('resources/views/plugins/datatables/dataTables.buttons.min.js')}}"></script>
 <script src="{{asset('resources/views/plugins/datatables/dataTables.select.min.js')}}"></script>

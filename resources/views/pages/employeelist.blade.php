@@ -112,6 +112,10 @@ $(window).on('load', function(){
       }, {
         label: "カナ:",
         name: "kana"
+      }, {
+        label: "XXX:",
+        name: "birthday",
+        type: 'datetime'
       }
     ]
   });
