@@ -175,7 +175,7 @@ function createEmployeeTable() {
         },
         {
           "title":"プロジェクト",
-          "data": "project_Id"
+          "data": "project_name"
         }
       ],
       select: true,

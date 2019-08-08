@@ -33,7 +33,10 @@ class EmployeeController extends CommonController
                 $join->on('employee.sex', '=', 'b.code_index')
                     ->where('b.code_id', '=', 1);
             })
-            ->select('employee.*', 'a.code_name as title_name', 'b.code_name as sex_name')
+            ->leftjoin('project AS c', function ($join) {
+                $join->on('employee.project_Id', '=', 'c.id');
+            })
+            ->select('employee.*', 'a.code_name as title_name', 'b.code_name as sex_name', 'c.name as project_name')
             ->get();
 
 
