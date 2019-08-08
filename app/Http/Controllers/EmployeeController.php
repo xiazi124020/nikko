@@ -22,7 +22,7 @@ class EmployeeController extends CommonController
     }
     
     public function listdata() {
-        $loginPromission = session('employee')[0]['permission'];
+        // $loginPromission = session('employee')[0]['permission'];
         // $employees = VEmployee::where('permission', '<=', $loginPromission)->get();
         $employees = DB::table('employee')
             ->leftjoin('code AS a', function ($join) {
@@ -32,7 +32,10 @@ class EmployeeController extends CommonController
             ->leftjoin('code AS b', function ($join) {
                 $join->on('employee.sex', '=', 'b.code_index')
                     ->where('b.code_id', '=', 1);
-            })->where('permission', '<=', $loginPromission)->get();
+            })
+            ->select('employee.*', 'a.code_name as title_name', 'b.code_name as sex_name')
+            ->get();
+
 
         $employees = (object)$employees;
         return response()->json($employees);

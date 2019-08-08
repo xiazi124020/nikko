@@ -159,7 +159,7 @@ function createEmployeeTable() {
         },
         {
           "title":"性別",
-          "data": "sex"
+          "data": "sex_name"
         },
         {
           "title":"携帯",
@@ -167,7 +167,7 @@ function createEmployeeTable() {
         },
         {
           "title":"職位",
-          "data": "code_Name"
+          "data": "title_name"
         },
         {
           "title":"email",
