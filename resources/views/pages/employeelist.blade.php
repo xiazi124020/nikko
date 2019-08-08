@@ -113,12 +113,30 @@ $(window).on('load', function(){
         label: "カナ:",
         name: "kana"
       }, {
-        label: "XXX:",
+        label: "生年月日:",
         name: "birthday",
         type: 'datetime'
+      }, {
+        label: "性別:",
+        name: "sex",
+        type: 'radio',
+        options: [
+          { label: "女", value: 0 },
+          { label: "男", value: 1 }
+        ],
+        def: 0
       }
     ]
   });
+
+  editor.on( 'initCreate', function () {
+    editor.hide( [ 'id' ] );
+  });
+
+  editor.on( 'initEdit', function () {
+    editor.hide( [ 'id', 'sex', 'birthday' ] );
+  });
+
   employeeTable = createEmployeeTable();
 } );
 
@@ -139,7 +157,7 @@ function createEmployeeTable() {
       dom: "Bfrtip",
       paging: true,
       data: datas,
-      pageLength: 10,
+      pageLength: 5,
       columns: [
         {
           "title":"社員番号",
